@@ -13,7 +13,6 @@ class InvertedPendulumEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         ob = self._get_obs()
         notdone = np.isfinite(ob).all() and (np.abs(ob[1]) <= .2)
         done = not notdone
-        done = False
         return ob, reward, done, {}
 
     def reset_model(self):
@@ -23,9 +22,9 @@ class InvertedPendulumEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def _get_obs(self):
-        return np.concatenate([self.model.data.qpos, self.model.data.qvel]).ravel()
+        return np.concatenate([self.sim.data.qpos, self.sim.data.qvel]).ravel()
 
-    # def viewer_setup(self):
-    #     v = self.viewer
-    #     v.cam.trackbodyid = 0
-    #     v.cam.distance = v.model.stat.extent
+    #def viewer_setup(self):
+    #    v = self.viewer
+    #    v.cam.trackbodyid = 0
+    #    v.cam.distance = v.model.stat.extent

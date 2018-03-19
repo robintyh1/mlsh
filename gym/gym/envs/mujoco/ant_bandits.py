@@ -40,8 +40,8 @@ class AntBanditsEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         pass
 
     def _get_obs(self):
-        qpos = self.model.data.qpos
-        qvel = self.model.data.qvel
+        qpos = self.sim.data.qpos
+        qvel = self.sim.data.qvel
         return np.concatenate([qpos.flat[:-2], qvel.flat[:-2], np.array([0])])
 
     def reset_model(self):

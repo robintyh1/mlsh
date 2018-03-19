@@ -25,3 +25,5 @@ from gym.envs.mujoco.ant_obstaclesbig import AntObstaclesBigEnv
 from gym.envs.mujoco.ant_obstaclesgen import AntObstaclesGenEnv
 from gym.envs.mujoco.humanoid_course import HumanoidCourseEnv
 from gym.envs.mujoco.humanoid_seq import HumanoidSeqEnv
+
+from gym.envs.mujoco.ant_trial import AntTrialEnv

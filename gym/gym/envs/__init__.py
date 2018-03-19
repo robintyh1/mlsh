@@ -309,6 +309,12 @@ register(
 )
 
 register(
+    id='AntTrial-v1',
+    entry_point='gym.envs.mujoco:AntTrialEnv',
+    max_episode_steps=1000,
+)
+
+register(
     id='Walker2d-v1',
     max_episode_steps=1000,
     entry_point='gym.envs.mujoco:Walker2dEnv',

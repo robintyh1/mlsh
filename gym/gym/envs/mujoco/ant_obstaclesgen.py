@@ -21,8 +21,8 @@ class AntObstaclesGenEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         if self.count % 200 == 0:
             n_qpos = self.init_qpos + self.np_random.uniform(size=self.model.nq, low=-.1, high=.1)
             n_qvel = self.init_qvel + self.np_random.randn(self.model.nv) * .1
-            n_qpos[:2] = self.data.qpos[:2,0]
-            n_qpos[-11:] = self.data.qpos[-11:,0]
+            n_qpos[:2] = self.data.qpos[:2]
+            n_qpos[-11:] = self.data.qpos[-11:]
             self.set_state(n_qpos, n_qvel)
 
         goal = np.array([8, 24])
@@ -46,15 +46,15 @@ class AntObstaclesGenEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         if self.realgoal == 8:
             goal = np.array([32, -16])
 
-        # reward = -np.sum(np.square(self.data.qpos[:2,0] - goal)) / 100000
+        # reward = -np.sum(np.square(self.data.qpos[:2] - goal)) / 100000
 
-        xposbefore = self.data.qpos[0,0]
-        yposbefore = self.data.qpos[1,0]
+        xposbefore = self.data.qpos[0]
+        yposbefore = self.data.qpos[1]
 
         self.do_simulation(a, self.frame_skip)
 
-        xposafter = self.data.qpos[0,0]
-        yposafter = self.data.qpos[1,0]
+        xposafter = self.data.qpos[0]
+        yposafter = self.data.qpos[1]
 
         if xposbefore < goal[0]:
             forward_reward = (xposafter - xposbefore)/self.dt

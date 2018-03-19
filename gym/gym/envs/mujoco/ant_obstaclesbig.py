@@ -23,18 +23,18 @@ class AntObstaclesBigEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         if self.count % 300 == 0:
             n_qpos = self.init_qpos + self.np_random.uniform(size=self.model.nq, low=-.1, high=.1)
             n_qvel = self.init_qvel + self.np_random.randn(self.model.nv) * .1
-            n_qpos[:2] = self.data.qpos[:2,0]
+            n_qpos[:2] = self.data.qpos[:2]
             self.set_state(n_qpos, n_qvel)
 
-        if np.sum(np.square(self.data.qpos[:2,0] - np.array([25,30]))) < 15*15:
+        if np.sum(np.square(self.data.qpos[:2] - np.array([25,30]))) < 15*15:
             self.mx += np.sign(self.data.qpos[0,0] - self.mx)
             self.my += np.sign(self.data.qpos[1,0] - self.my)
 
         # print(np.square(self.data.qpos[:2] - np.array([0,20])))
 
-        n_qpos = np.copy(self.data.qpos[:,0])
+        n_qpos = np.copy(self.data.qpos[:])
         n_qpos[-2:] = np.array([self.mx,self.my])
-        self.set_state(n_qpos, self.data.qvel[:,0])
+        self.set_state(n_qpos, self.data.qvel[:])
         self.do_simulation(a, self.frame_skip)
 
         # reward = - np.square(np.sum(self.data.qpos[:2] - np.array([50,50]))) / 100000
@@ -43,9 +43,9 @@ class AntObstaclesBigEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
         # print(self.data.qpos[:2,0])
         # print(np.array([35,-35]))
-        # print(np.square(self.data.qpos[:2, 0] - np.array([35,-35])))
+        # print(np.square(self.data.qpos[:2] - np.array([35,-35])))
 
-        if np.sum(np.square(self.data.qpos[:2, 0] - np.array([35,-35]))) < 30:
+        if np.sum(np.square(self.data.qpos[:2] - np.array([35,-35]))) < 30:
             reward = 1
         else:
             reward = 0
