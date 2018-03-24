@@ -13,7 +13,7 @@ class AntRunEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         velocity = self.sim.data.qvel[:2]
         reward = np.sum(velocity**2)
         done = False
-        return ob, reward, done, {}
+        return ob, reward, done, {'pos': self.sim.data.qpos.flat[:2]}
 
     def _get_obs(self):
         return np.concatenate([
