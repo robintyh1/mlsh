@@ -321,6 +321,12 @@ register(
 )
 
 register(
+    id='AntRunningFull-v1',
+    entry_point='gym.envs.mujoco:AntRunFullEnv',
+    max_episode_steps=500,
+)
+
+register(
     id='Walker2d-v1',
     max_episode_steps=1000,
     entry_point='gym.envs.mujoco:Walker2dEnv',
