@@ -29,3 +29,6 @@ from gym.envs.mujoco.humanoid_seq import HumanoidSeqEnv
 from gym.envs.mujoco.ant_trial import AntTrialEnv
 from gym.envs.mujoco.ant_running import AntRunEnv
 from gym.envs.mujoco.ant_running_full import AntRunFullEnv
+from gym.envs.mujoco.ant_running_wide_hallway import AntRunWideHallwayEnv
+from gym.envs.mujoco.ant_running_narrow_hallway import AntRunNarrowHallwayEnv
+from gym.envs.mujoco.ant_running_Umaze import AntRunUMazeEnv

@@ -327,6 +327,24 @@ register(
 )
 
 register(
+    id='AntRunningNarrowHallway-v1',
+    entry_point='gym.envs.mujoco:AntRunNarrowHallwayEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntRunningWideHallway-v1',
+    entry_point='gym.envs.mujoco:AntRunWideHallwayEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntRunningUMaze-v1',
+    entry_point='gym.envs.mujoco:AntRunUMazeEnv',
+    max_episode_steps=500,
+)
+
+register(
     id='Walker2d-v1',
     max_episode_steps=1000,
     entry_point='gym.envs.mujoco:Walker2dEnv',

@@ -2,12 +2,12 @@ import numpy as np
 from gym import utils
 from gym.envs.mujoco import mujoco_env
 
-class AntRunFullEnv(mujoco_env.MujocoEnv, utils.EzPickle):
+class AntRunWideHallwayEnv(mujoco_env.MujocoEnv, utils.EzPickle):
     """
     Ant running env with complete state (qpos included)
     """
     def __init__(self):
-        mujoco_env.MujocoEnv.__init__(self, 'ant_running_full.xml', 5)
+        mujoco_env.MujocoEnv.__init__(self, 'ant_running_wide_hallway.xml', 5)
         utils.EzPickle.__init__(self)
 
     def _step(self, a):
