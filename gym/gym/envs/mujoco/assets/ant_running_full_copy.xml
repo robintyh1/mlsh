@@ -66,14 +66,6 @@
         </body>
       </body>
     </body>
-    <geom pos="10 -4 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="11 0.3 5" type="box"/>
-    <geom pos="5 4 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="6 0.3 5" type="box"/>
-    <geom pos="-1 0 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 4 5" type="box"/>
-    <geom pos="21 8 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 12 5" type="box"/>
-    <geom pos="11 8 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 4 5" type="box"/>
-    <geom pos="5 12 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="6 0.3 5" type="box"/>
-    <geom pos="10 20 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="11 0.3 5" type="box"/>
-    <geom pos="-1 16 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 4 5" type="box"/>
   </worldbody>
   <actuator>
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4" gear="150"/>
