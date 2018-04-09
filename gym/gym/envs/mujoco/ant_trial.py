@@ -62,8 +62,10 @@ class AntTrialEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         #     self.data.qvel.flat,
         # ])
         return np.concatenate([
-            self.data.qpos.flat[:-2],
-            self.data.qvel.flat[:-2],
+            #self.data.qpos.flat[:-2],
+            #self.data.qvel.flat[:-2],
+            self.data.qpos.flat, # full state
+            self.data.qvel.flat,
         ])
 
     def reset_model(self):
