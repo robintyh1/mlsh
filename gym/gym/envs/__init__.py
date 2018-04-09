@@ -252,6 +252,14 @@ register(
     reward_threshold=4800.0,
 )
 
+
+register(
+    id='HalfCheetahFinishLine-v1',
+    entry_point='gym.envs.mujoco:HalfCheetahFinishLineEnv',
+    max_episode_steps=1000,
+    #reward_threshold=4800.0,
+)
+
 register(
     id='Hopper-v1',
     entry_point='gym.envs.mujoco:HopperEnv',
@@ -270,6 +278,13 @@ register(
     id='SwimmerBandits-v1',
     entry_point='gym.envs.mujoco:SwimmerBanditsEnv',
     max_episode_steps=1000,
+)
+
+register(
+    id='SwimmerFinishLine-v1',
+    entry_point='gym.envs.mujoco:SwimmerFinishLineEnv',
+    max_episode_steps=1000,
+    #reward_threshold=360.0,
 )
 
 register(
@@ -309,6 +324,12 @@ register(
 )
 
 register(
+    id='AntFinishLine-v1',
+    entry_point='gym.envs.mujoco:AntFinishLineEnv',
+    max_episode_steps=1000,
+)
+
+register(
     id='AntTrial-v1',
     entry_point='gym.envs.mujoco:AntTrialEnv',
     max_episode_steps=1000,
@@ -323,6 +344,12 @@ register(
 register(
     id='AntRunningFull-v1',
     entry_point='gym.envs.mujoco:AntRunFullEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntRunningFixedInit-v1',
+    entry_point='gym.envs.mujoco:AntRunFixedInitEnv',
     max_episode_steps=500,
 )
 

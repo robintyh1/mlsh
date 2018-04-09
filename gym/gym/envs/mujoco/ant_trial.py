@@ -38,9 +38,11 @@ class AntTrialEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         #self.set_state(n_qpos, self.data.qvel[:])
         self.do_simulation(a, self.frame_skip)
 
-        reward = -np.square(np.sum(self.data.qpos[:2] - np.array([19, 0]))) / 100 #/ 100000
+        #reward = -np.square(np.sum(self.data.qpos[:2] - np.array([19, 0]))) / 100 #/ 100000
         #
         # print(np.square(np.sum(self.data.qpos[:2] - np.array([50,50]))))
+
+        reward = -np.sum(np.square(self.data.qpos[:2] - np.array([19, 0]))) / 100.0
 
         # if np.square(np.sum(self.data.qpos[:2] - np.array([50,50]))) < 2000:
         #     reward = 1

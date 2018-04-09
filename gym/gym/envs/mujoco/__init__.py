@@ -32,3 +32,8 @@ from gym.envs.mujoco.ant_running_full import AntRunFullEnv
 from gym.envs.mujoco.ant_running_wide_hallway import AntRunWideHallwayEnv
 from gym.envs.mujoco.ant_running_narrow_hallway import AntRunNarrowHallwayEnv
 from gym.envs.mujoco.ant_running_Umaze import AntRunUMazeEnv
+
+from gym.envs.mujoco.swimmer_finishline import SwimmerFinishLineEnv
+from gym.envs.mujoco.half_cheetah_finishline import HalfCheetahFinishLineEnv
+from gym.envs.mujoco.ant_finishline import AntFinishLineEnv
+from gym.envs.mujoco.ant_running_fixedinit import AntRunFixedInitEnv
