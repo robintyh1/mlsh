@@ -332,7 +332,7 @@ register(
 register(
     id='AntTrial-v1',
     entry_point='gym.envs.mujoco:AntTrialEnv',
-    max_episode_steps=1000,
+    max_episode_steps=500,
 )
 
 register(
