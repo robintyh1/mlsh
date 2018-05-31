@@ -13,23 +13,28 @@ class SwimmerFinishLineEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         utils.EzPickle.__init__(self)
 
     def _step(self, a):
-
+        
+        xposbefore = self.get_body_com("torso")[0]
         self.do_simulation(a, self.frame_skip)
+        xposafter = self.get_body_com("torso")[0]
 
-        xvelocity = self.sim.data.qvel[0]
-        reward = xvelocity ** 2
+        xvelocity = (xposafter - xposbefore)/self.dt
+        #reward = abs(xvelocity) #xvelocity ** 2
+        reward = -(xposafter)
         xpos = self.sim.data.qpos[0]
-        if xpos > 10.0:
-            reward += 10.0
+        #if xpos < -1.:
+        #    reward += 10.0
         ob = self._get_obs()
-        return ob, reward, False, {'pos': self.sim.data.qpos[:2]}
+        return ob, reward, False, {'pos': self.sim.data.qpos[0]}
 
     def _get_obs(self):
         qpos = self.sim.data.qpos
         qvel = self.sim.data.qvel
-        return np.concatenate([qpos.flat[2:], qvel.flat])
+        return np.concatenate([qpos.flat, qvel.flat])
 
     def reset_model(self):
+        self.init_qpos[0] = 0.0
+        self.init_qvel[0] = 0.0
         self.set_state(
             self.init_qpos + self.np_random.uniform(low=-.1, high=.1, size=self.model.nq),
             self.init_qvel + self.np_random.uniform(low=-.1, high=.1, size=self.model.nv)

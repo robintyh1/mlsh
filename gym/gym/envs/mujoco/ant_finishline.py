@@ -8,20 +8,26 @@ class AntFinishLineEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         utils.EzPickle.__init__(self)
 
     def _step(self, a):
+        xposbefore = self.get_body_com("torso")[0]
         self.do_simulation(a, self.frame_skip)
-
-        xvel = self.sim.data.qvel.flat[0]
-        reward = xvel ** 2
-        xpos = self.sim.data.qpos.flat[0]
-        if xpos > 10:
-            reward += 10
-        done = False
+        xposafter = self.get_body_com("torso")[0]
+        forward_reward = abs(xposafter) #abs((xposafter - xposbefore)/self.dt)
+        ctrl_cost = 0.5 * np.square(a).sum()
+        contact_cost = 0.5 * 1e-3 * np.sum(
+             np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        survive_reward = 1.0
+        reward = forward_reward - ctrl_cost - contact_cost + survive_reward
+        state = self.state_vector()
+        notdone = np.isfinite(state).all() \
+            and state[2] >= 0.2 and state[2] <= 1.0
+        done = not notdone
         ob = self._get_obs()
-        return ob, reward, done, {'pos': self.sim.data.qpos.flat[:2]}
+
+        return ob, reward, done, {'pos':self.sim.data.qpos.flat[:2]}
 
     def _get_obs(self):
         return np.concatenate([
-            self.sim.data.qpos.flat,  # full state
+            self.sim.data.qpos.flat[:2],  # full state
             self.sim.data.qvel.flat,
             np.clip(self.sim.data.cfrc_ext, -1, 1).flat,
         ])

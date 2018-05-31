@@ -36,4 +36,25 @@ from gym.envs.mujoco.ant_running_Umaze import AntRunUMazeEnv
 from gym.envs.mujoco.swimmer_finishline import SwimmerFinishLineEnv
 from gym.envs.mujoco.half_cheetah_finishline import HalfCheetahFinishLineEnv
 from gym.envs.mujoco.ant_finishline import AntFinishLineEnv
+from gym.envs.mujoco.ant_finishline_vertical import AntFinishLineVerticalEnv
 from gym.envs.mujoco.ant_running_fixedinit import AntRunFixedInitEnv
+
+from gym.envs.mujoco.ant_backward import AntBackwardEnv
+from gym.envs.mujoco.ant_upward import AntUpwardEnv
+from gym.envs.mujoco.ant_downward import AntDownwardEnv
+
+from gym.envs.mujoco.ant_fourgoals import AntFourgoalsEnv
+from gym.envs.mujoco.ant_smallfourgoals import AntSmallFourgoalsEnv
+
+from gym.envs.mujoco.ant_goalforward import AntGoalForwardEnv
+from gym.envs.mujoco.ant_goalupward import AntGoalUpwardEnv
+from gym.envs.mujoco.ant_goaldownward import AntGoalDownwardEnv
+from gym.envs.mujoco.ant_goalbackward import AntGoalBackwardEnv
+
+from gym.envs.mujoco.ant_finishlinebonus import AntFinishLineBonusEnv
+from gym.envs.mujoco.ant_finishlinebonuswall import AntFinishLineBonusWallEnv
+
+from gym.envs.mujoco.pusher_multigoal_hard import PusherMultigoalHardEnv
+from gym.envs.mujoco.pusher_multigoal import PusherMultigoalEnv
+from gym.envs.mujoco.thrower_multigoal import ThrowerMultigoalEnv
+from gym.envs.mujoco.reacher_multigoals import ReacherMultigoalEnv

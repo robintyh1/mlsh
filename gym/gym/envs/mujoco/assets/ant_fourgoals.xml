@@ -66,9 +66,24 @@
         </body>
       </body>
     </body>
-    <geom pos="5 0 0" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
-    <geom pos="-5 0 0" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
-    <geom pos="0 5 0" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
+    <geom pos="-10 -5 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+    <geom pos="-10 5 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+    <geom pos="-15 0 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="10 -5 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+    <geom pos="10 5 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+    <geom pos="15 0 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="-5 10 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="5 10 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="0 15 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+    <geom pos="-5 -10 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="5 -10 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="0.3 5 5" type="box"/>
+    <geom pos="0 -15 0" conaffinity="1" rgba="0.9 0.9 0.9 1" size="5 0.3 5" type="box"/>
+
+    <geom pos="14 0 3" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
+    <geom pos="-14 0 3" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
+    <geom pos="0 14 3" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
+    <geom pos="0 -14 3" conaffinity="1" rgba="0.2 0.9 0.2 1" size="1 1 0.3" type="box"/> 
+
   </worldbody>
   <actuator>
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_4" gear="150"/>

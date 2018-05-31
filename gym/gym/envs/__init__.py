@@ -58,6 +58,13 @@ register(
 )
 
 register(
+    id='CartPoleCont-v0',
+    entry_point='gym.envs.classic_control:CartPoleContEnv',
+    max_episode_steps=200,
+    reward_threshold=195.0,
+)
+
+register(
     id='CartPole-v1',
     entry_point='gym.envs.classic_control:CartPoleEnv',
     max_episode_steps=500,
@@ -65,8 +72,22 @@ register(
 )
 
 register(
+    id='CartPoleCont-v1',
+    entry_point='gym.envs.classic_control:CartPoleContEnv',
+    max_episode_steps=500,
+    reward_threshold=475.0,
+)
+
+register(
     id='MountainCar-v0',
     entry_point='gym.envs.classic_control:MountainCarEnv',
+    max_episode_steps=200,
+    reward_threshold=-110.0,
+)
+
+register(
+    id='MountainCarCont-v0',
+    entry_point='gym.envs.classic_control:MountainCarContEnv',
     max_episode_steps=200,
     reward_threshold=-110.0,
 )
@@ -87,6 +108,12 @@ register(
 register(
     id='Acrobot-v1',
     entry_point='gym.envs.classic_control:AcrobotEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AcrobotCont-v1',
+    entry_point='gym.envs.classic_control:AcrobotContEnv',
     max_episode_steps=500,
 )
 
@@ -211,6 +238,12 @@ register(
 )
 
 register(
+    id='ReacherMultigoal-v1',
+    entry_point='gym.envs.mujoco:ReacherMultigoalEnv',
+    max_episode_steps=50,
+)
+
+register(
     id='Pusher-v0',
     entry_point='gym.envs.mujoco:PusherEnv',
     max_episode_steps=100,
@@ -218,10 +251,31 @@ register(
 )
 
 register(
+    id='PusherMultigoal-v0',
+    entry_point='gym.envs.mujoco:PusherMultigoalEnv',
+    max_episode_steps=100,
+    #reward_threshold=0.0,
+)
+
+register(
+    id='PusherMultigoalHard-v0',
+    entry_point='gym.envs.mujoco:PusherMultigoalHardEnv',
+    max_episode_steps=100,
+    #reward_threshold=0.0,
+)
+
+register(
     id='Thrower-v0',
     entry_point='gym.envs.mujoco:ThrowerEnv',
     max_episode_steps=100,
     reward_threshold=0.0,
+)
+
+register(
+    id='ThrowerMultigoal-v0',
+    entry_point='gym.envs.mujoco:ThrowerMultigoalEnv',
+    max_episode_steps=100,
+    #reward_threshold=0.0,
 )
 
 register(
@@ -324,8 +378,62 @@ register(
 )
 
 register(
+    id='AntFourgoals-v1',
+    entry_point='gym.envs.mujoco:AntFourgoalsEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntSmallFourgoals-v1',
+    entry_point='gym.envs.mujoco:AntSmallFourgoalsEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntGoalForward-v1',
+    entry_point='gym.envs.mujoco:AntGoalForwardEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntGoalUpward-v1',
+    entry_point='gym.envs.mujoco:AntGoalUpwardEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntGoalDownward-v1',
+    entry_point='gym.envs.mujoco:AntGoalDownwardEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntGoalBackward-v1',
+    entry_point='gym.envs.mujoco:AntGoalBackwardEnv',
+    max_episode_steps=500,
+)
+
+register(
     id='AntFinishLine-v1',
     entry_point='gym.envs.mujoco:AntFinishLineEnv',
+    max_episode_steps=1000,
+)
+
+register(
+    id='AntFinishLineBonus-v1',
+    entry_point='gym.envs.mujoco:AntFinishLineBonusEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntFinishLineBonusWall-v1',
+    entry_point='gym.envs.mujoco:AntFinishLineBonusWallEnv',
+    max_episode_steps=500,
+)
+
+register(
+    id='AntFinishLineVertical-v1',
+    entry_point='gym.envs.mujoco:AntFinishLineVerticalEnv',
     max_episode_steps=1000,
 )
 
@@ -333,6 +441,24 @@ register(
     id='AntTrial-v1',
     entry_point='gym.envs.mujoco:AntTrialEnv',
     max_episode_steps=500,
+)
+
+register(
+    id='AntBackward-v1',
+    entry_point='gym.envs.mujoco:AntBackwardEnv',
+    max_episode_steps=1000,
+)
+
+register(
+    id='AntUpward-v1',
+    entry_point='gym.envs.mujoco:AntUpwardEnv',
+    max_episode_steps=1000,
+)
+
+register(
+    id='AntDownward-v1',
+    entry_point='gym.envs.mujoco:AntDownwardEnv',
+    max_episode_steps=1000,
 )
 
 register(
